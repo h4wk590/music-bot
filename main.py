@@ -12,6 +12,7 @@ with open('token.txt') as t:
 # Set permissions with intents
 async def start_bot():
     bot = commands.Bot(command_prefix=',' intents=discord.Intents.all(), help_command=None)
+    bot.load_extension('cogs.help_cog')
     return bot
 
 # Start main.py asyncronously
