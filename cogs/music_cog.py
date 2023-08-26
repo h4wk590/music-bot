@@ -18,7 +18,7 @@ class Music(commands, Cog):
         self.voice_channel = None
         self.VOL_OPTIONS = {'format': 'nestaudio', 'noplaylist': 'True'}
         self.VOL_OPTIONS_PLAYLIST_LENGTH = {'flatplaylist': 'True', 'playlistend': 1}
-        self.FFMPEG_OPTIONS = {'before_options': '-recconect 1 -recconect_streamed 1 -reconnect_delay_max 5',
+        self.FFMPEG_OPTIONS = {'before_options': '-reconnect 1 -reconnect_streamed 1 -reconnect_delay_max 5',
                                 'options:' ' vn'}
         self.LINK_LIST = ('www.youtube.com', 'youtube.com', 'youtu.be', 'm.youtube.com')
 
@@ -116,7 +116,7 @@ class Music(commands, Cog):
             return False
         else:
             return True
-            
+
     # ',p' command to call the play_music function
     @commands.command(pass_context=True)
     async def p(self, ctx, *args):
